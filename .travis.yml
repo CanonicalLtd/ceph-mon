@@ -1,0 +1,26 @@
+addons:
+  apt:
+    sources:
+      - ppa:juju/stable
+    packages:
+      - juju-core
+      - charm-tools
+      - python-amulet
+      - python-keystoneclient
+      - python-glanceclient
+      - python-novaclient
+language: python
+python:
+  - "2.7"
+script: make test
+
+# whitelist
+branches:
+  only:
+    - master
+cache:
+  apt: true
+notifications:
+  email:
+    on_success: never
+
